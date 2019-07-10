@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4nz-gn-0TC">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--IBM Visual Recognizer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Seefood_new" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-Zu-TZn">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFq-jq-SKc">
+                                <rect key="frame" x="146" y="688" width="122" height="54"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="kWt-G9-NFe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="sharedButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S3j-kQ-OFn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DFq-jq-SKc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="146" id="2ZX-W6-bPl"/>
+                            <constraint firstAttribute="bottom" secondItem="Jat-Zu-TZn" secondAttribute="bottom" id="7lt-Ud-trU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DFq-jq-SKc" secondAttribute="bottom" constant="120" id="EsH-ib-DnI"/>
+                            <constraint firstItem="Jat-Zu-TZn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="W6E-mm-akR"/>
+                            <constraint firstItem="Jat-Zu-TZn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZCa-4q-TgR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DFq-jq-SKc" secondAttribute="trailing" constant="146" id="ukV-UA-Aze"/>
+                            <constraint firstItem="Jat-Zu-TZn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zsN-qc-ufp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="IBM Visual Recognizer" largeTitleDisplayMode="never" id="xLR-8V-zGd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="teR-Qa-Cyp">
+                            <connections>
+                                <action selector="searchTapped:" destination="BYZ-38-t0r" id="GhY-1w-omh"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="hef-iz-xjd">
+                            <connections>
+                                <action selector="cameraTapper:" destination="BYZ-38-t0r" id="2Ga-CB-Ri9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cameraButton" destination="hef-iz-xjd" id="wo5-Fe-OLS"/>
+                        <outlet property="imageView" destination="Jat-Zu-TZn" id="RCU-2n-TYF"/>
+                        <outlet property="photoLibraryButton" destination="teR-Qa-Cyp" id="3OZ-5c-p9T"/>
+                        <outlet property="shareButton" destination="DFq-jq-SKc" id="qvV-CJ-Mkx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="692.75362318840587" y="373.66071428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i8L-Yf-5GU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4nz-gn-0TC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8gP-OI-Sgg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="oYb-4C-nfv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A3S-yZ-OA3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="374"/>
         </scene>
     </scenes>
 </document>
